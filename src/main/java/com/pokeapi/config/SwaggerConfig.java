@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.fasterxml.classmate.TypeResolver;
-import com.pokeapi.dto.AbilidadeTheftGetDTO;
+import com.pokeapi.dto.HabilidadeTheftGetDTO;
 import com.pokeapi.dto.AuditoriaGetDTO;
 import com.pokeapi.dto.PokemonCaptorDetalheGetDTO;
 import com.pokeapi.dto.PokemonCaptorGetDTO;
@@ -45,7 +45,7 @@ public class SwaggerConfig {
 					.build()
 					.useDefaultResponseMessages(false)
 					.apiInfo(this.buildInfoAPI())
-					.additionalModels(this.typeResolver.resolve(AbilidadeTheftGetDTO.class))
+					.additionalModels(this.typeResolver.resolve(HabilidadeTheftGetDTO.class))
 					.additionalModels(this.typeResolver.resolve(AuditoriaGetDTO.class))
 					.additionalModels(this.typeResolver.resolve(PokemonCaptorDetalheGetDTO.class))
 					.additionalModels(this.typeResolver.resolve(PokemonCaptorGetDTO.class));

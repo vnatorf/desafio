@@ -5,10 +5,10 @@ import org.dozer.Mapping;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-@ApiModel(description = "DTO com as informações da abilidade do pokemon")
-public class AbilidadeTheftGetDTO {
+@ApiModel(description = "DTO com as informações da habilidade do pokemon")
+public class HabilidadeTheftGetDTO {
 
-	@ApiModelProperty(notes = "Nome da abilidade")
+	@ApiModelProperty(notes = "Nome da habilidade")
 	@Mapping("dsNom")
 	private String nome;
 

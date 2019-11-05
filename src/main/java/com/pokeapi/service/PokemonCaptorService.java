@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 import com.pokeapi.dto.PokemonCaptorDetalheGetDTO;
 import com.pokeapi.dto.PokemonCaptorGetDTO;
 import com.pokeapi.dto.PokemonCaptorPostDTO;
-import com.pokeapi.model.AbilidadeCaptor;
+import com.pokeapi.model.HabilidadeCaptor;
 import com.pokeapi.model.PokemonCaptor;
 import com.pokeapi.model.QPokemonCaptor;
 import com.pokeapi.repository.PokemonCaptorRepository;
@@ -38,11 +38,11 @@ public class PokemonCaptorService extends DefaultService {
 	/**
 	 * Método responsável por capturar os pokemons selecionados. Os mesmos serão consultados na api
 	 * <a href="https://pokeapi.co/">PokéAPI</a>. Os pokemons selecionados, caso não existam na base, serão gravados assim
-	 * como suas abilidades.
+	 * como suas habilidades.
 	 * 
 	 * Informações serão persistidas nas tabelas:
 	 * 		PokemonCaptor: 't_poca'
-	 * 		AbilidadeCaptor: 't_abca'
+	 * 		HabilidadeCaptor: 't_abca'
 	 * 
 	 * @param dto DTO com a lista dos pokemons que serão capturados
 	 * @return Retorna os pokemons capturados
@@ -89,7 +89,7 @@ public class PokemonCaptorService extends DefaultService {
 	 * Método responsável por consultar o pokemon capturado.
 	 * 
 	 * @param id Identificador do pokemon na tabela 't_poca'
-	 * @return Retorno o pokemon capturado com suas abilidades
+	 * @return Retorno o pokemon capturado com suas habilidades
 	 */
 	public PokemonCaptorDetalheGetDTO consultar(final Integer id) {
 		return super.map(this.repository.findById(id), PokemonCaptorDetalheGetDTO.class);
@@ -187,10 +187,10 @@ public class PokemonCaptorService extends DefaultService {
 										.withNrWei(pokemon.getWeight())
 										.withDtEntSis(LocalDate.now());
 
-			entity.setAbilidades(PokeApiUtil
+			entity.setHabilidades(PokeApiUtil
 									.emptyIfNull(pokemon.getAbilities())
 									.stream()
-									.map(abildiade -> AbilidadeCaptor
+									.map(abildiade -> HabilidadeCaptor
 														.create()
 														.withPokemonCaptor(entity)
 														.withDsNom(abildiade.getAbility().getName()))

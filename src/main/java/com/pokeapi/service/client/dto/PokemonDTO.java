@@ -12,7 +12,7 @@ public class PokemonDTO {
 
 	private Integer weight;
 
-	private List<ListaAbilidadeDTO> abilities;
+	private List<ListaHabilidadeDTO> abilities;
 
 	public Integer getId() {
 		return id;
@@ -46,11 +46,11 @@ public class PokemonDTO {
 		this.weight = weight;
 	}
 
-	public List<ListaAbilidadeDTO> getAbilities() {
+	public List<ListaHabilidadeDTO> getAbilities() {
 		return abilities;
 	}
 
-	public void setAbilities(List<ListaAbilidadeDTO> abilities) {
+	public void setAbilities(List<ListaHabilidadeDTO> abilities) {
 		this.abilities = abilities;
 	}
 

@@ -34,7 +34,7 @@ public class PokemonCaptor {
 			   fetch = FetchType.LAZY,
 			   orphanRemoval = true,
 			   cascade = CascadeType.ALL)
-	private List<AbilidadeCaptor> abilidades;
+	private List<HabilidadeCaptor> habilidades;
 
 	public static synchronized PokemonCaptor create() {
 		return new PokemonCaptor();
@@ -105,12 +105,12 @@ public class PokemonCaptor {
 		this.dtEntSis = dtEntSis;
 	}
 
-	public List<AbilidadeCaptor> getAbilidades() {
-		return abilidades;
+	public List<HabilidadeCaptor> getHabilidades() {
+		return habilidades;
 	}
 
-	public void setAbilidades(List<AbilidadeCaptor> abilidades) {
-		this.abilidades = abilidades;
+	public void setHabilidades(List<HabilidadeCaptor> habilidades) {
+		this.habilidades = habilidades;
 	}
 
 }

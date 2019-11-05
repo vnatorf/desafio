@@ -8,15 +8,15 @@ import io.swagger.annotations.ApiModelProperty;
 @ApiModel(description = "DTO mais detalhado com as informações do pokemon capturado")
 public class PokemonCaptorDetalheGetDTO extends PokemonCaptorGetDTO {
 
-	@ApiModelProperty(notes = "Lista das abilidades do pokemon capturado")
-	private List<AbilidadeTheftGetDTO> abilidades;
+	@ApiModelProperty(notes = "Lista das habilidades do pokemon capturado")
+	private List<HabilidadeTheftGetDTO> habilidades;
 
-	public List<AbilidadeTheftGetDTO> getAbilidades() {
-		return abilidades;
+	public List<HabilidadeTheftGetDTO> getHabilidades() {
+		return habilidades;
 	}
 
-	public void setAbilidades(List<AbilidadeTheftGetDTO> abilidades) {
-		this.abilidades = abilidades;
+	public void setHabilidades(List<HabilidadeTheftGetDTO> habilidades) {
+		this.habilidades = habilidades;
 	}
 
 }

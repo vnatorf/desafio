@@ -1,6 +1,6 @@
 package com.pokeapi.service.client.dto;
 
-public class AbilidadeDTO {
+public class HabilidadeDTO {
 
 	private String name;
 

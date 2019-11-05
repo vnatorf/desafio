@@ -17,16 +17,16 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.pokeapi.dto.PokemonCaptorGetDTO;
 import com.pokeapi.dto.PokemonCaptorPostDTO;
-import com.pokeapi.dto.builder.AbilidadeDTOBuilderTeste;
-import com.pokeapi.dto.builder.ListaAbilidadeDTOBuilderTeste;
+import com.pokeapi.dto.builder.HabilidadeDTOBuilderTeste;
+import com.pokeapi.dto.builder.ListaHabilidadeDTOBuilderTeste;
 import com.pokeapi.dto.builder.PokemonDTOBuilderTeste;
 import com.pokeapi.dto.builder.PokemonTheftBuilderTeste;
 import com.pokeapi.dto.builder.PokemonTheftGetDTOBuilderTeste;
 import com.pokeapi.dto.builder.PokemonTheftPostDTOBuilderTeste;
 import com.pokeapi.model.PokemonCaptor;
 import com.pokeapi.repository.PokemonCaptorRepository;
-import com.pokeapi.service.client.dto.AbilidadeDTO;
-import com.pokeapi.service.client.dto.ListaAbilidadeDTO;
+import com.pokeapi.service.client.dto.HabilidadeDTO;
+import com.pokeapi.service.client.dto.ListaHabilidadeDTO;
 import com.pokeapi.service.client.dto.PokemonDTO;
 import com.pokeapi.util.ChaveMensagemUtil;
 import com.pokeapi.util.PokeApiTestUtil;
@@ -120,8 +120,8 @@ public class PokemonCaptorServiceTeste extends DefaultServiceTeste {
 		final Set<String> pokemons = PokeApiTestUtil.getSetString(1, null);
 		final Optional<PokemonCaptor> optionalEmpty = Optional.empty();
 		final PokemonDTO pokemonDTO = PokemonDTOBuilderTeste.mock();
-		final ListaAbilidadeDTO listaAbilidadeDTO = ListaAbilidadeDTOBuilderTeste.mock();
-		final AbilidadeDTO abilidadeDTO = AbilidadeDTOBuilderTeste.mock();
+		final ListaHabilidadeDTO listaAbilidadeDTO = ListaHabilidadeDTOBuilderTeste.mock();
+		final HabilidadeDTO habilidadeDTO = HabilidadeDTOBuilderTeste.mock();
 		final PokemonCaptor entity = PokemonTheftBuilderTeste.mock();
 		final PokemonCaptorGetDTO theftGetDTO = PokemonTheftGetDTOBuilderTeste.mock();
 
@@ -129,7 +129,7 @@ public class PokemonCaptorServiceTeste extends DefaultServiceTeste {
 		when(this.repository.findById(1)).thenReturn(optionalEmpty);
 		when(this.pokemonService.get("1")).thenReturn(pokemonDTO);
 		when(pokemonDTO.getAbilities()).thenReturn(Arrays.asList(listaAbilidadeDTO));
-		when(listaAbilidadeDTO.getAbility()).thenReturn(abilidadeDTO);
+		when(listaAbilidadeDTO.getAbility()).thenReturn(habilidadeDTO);
 		when(this.repository.save(entity)).thenReturn(entity);
 		when(super.mapper.map(entity, PokemonCaptorGetDTO.class)).thenReturn(theftGetDTO);
 

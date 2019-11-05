@@ -8,8 +8,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "t_abca")
-public class AbilidadeCaptor extends DefaultModel {
+@Table(name = "t_haca")
+public class HabilidadeCaptor extends DefaultModel {
 
 	@Column(nullable = false, length = 100)
 	private String dsNom;
@@ -18,16 +18,16 @@ public class AbilidadeCaptor extends DefaultModel {
 	@JoinColumn(name = "id_pok", referencedColumnName = "id")
 	private PokemonCaptor pokemonCaptor;
 
-	public static synchronized AbilidadeCaptor create() {
-		return new AbilidadeCaptor();
+	public static synchronized HabilidadeCaptor create() {
+		return new HabilidadeCaptor();
 	}
 
-	public AbilidadeCaptor withDsNom(final String dsNom) {
+	public HabilidadeCaptor withDsNom(final String dsNom) {
 		this.dsNom = dsNom;
 		return this;
 	}
 
-	public AbilidadeCaptor withPokemonCaptor(final PokemonCaptor pokemonCaptor) {
+	public HabilidadeCaptor withPokemonCaptor(final PokemonCaptor pokemonCaptor) {
 		this.pokemonCaptor = pokemonCaptor;
 		return this;
 	}
